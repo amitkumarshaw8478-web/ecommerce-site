@@ -1,0 +1,589 @@
+/* ==========================================
+   Admin Portal Premium Design System (CSS)
+   ========================================== */
+
+/* Keyframe Animations */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(124, 58, 237, 0.3), 0 0 10px rgba(124, 58, 237, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 30px rgba(124, 58, 237, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(124, 58, 237, 0.3), 0 0 10px rgba(124, 58, 237, 0.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Page Container */
+.admin-login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* Adjust to standard navbar height */
+  background: radial-gradient(circle at 10% 20%, rgb(18, 16, 33) 0%, rgb(9, 7, 18) 90%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Glassmorphic Auth Card */
+.admin-login-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 440px;
+  padding: 3rem 2.5rem;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: border-color 0.4s, box-shadow 0.4s;
+  box-sizing: border-box;
+}
+
+.admin-login-card:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15), 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Header Icon */
+.card-header-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  color: #a78bfa;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.card-header-icon.success-icon {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(52, 211, 153, 0.2) 100%);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Typography */
+.admin-login-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.card-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Form Styles */
+.admin-login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-login-card .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.admin-login-card label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs with Icons */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.admin-login-card input,
+.admin-login-card select {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.admin-login-card input::placeholder {
+  color: #475569;
+}
+
+.admin-login-card input:focus,
+.admin-login-card select:focus {
+  outline: none;
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+}
+
+.admin-login-card input:focus + .input-icon,
+.admin-login-card input:focus ~ .input-icon {
+  color: #a78bfa;
+}
+
+/* Password Input Wrapper */
+.password-input-wrapper input {
+  padding-right: 2.8rem;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.password-toggle-btn:hover {
+  color: #cbd5e1;
+}
+
+/* Password Strength Indicator */
+.password-strength-indicator {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.strength-bar-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 2px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-label {
+  font-size: 0.75rem;
+  text-align: right;
+  display: block;
+}
+
+/* Extra Form Actions (Remember me, Forgot Password) */
+.form-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #8b5cf6;
+}
+
+.forgot-password-link {
+  color: #a78bfa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.forgot-password-link:hover {
+  color: #c084fc;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.admin-login-card .btn-primary {
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.admin-login-card .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4), 0 0 10px rgba(139, 92, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.admin-login-card .btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.admin-login-card .btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background: #334155;
+  box-shadow: none;
+}
+
+/* Loading Spinner styles */
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 1.15rem;
+  height: 1.15rem;
+  vertical-align: text-bottom;
+  border: 0.2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+.loading-text {
+  font-weight: 500;
+}
+
+/* Alerts and Messages */
+.login-error,
+.login-info-message {
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  border: 1px solid transparent;
+  animation: fadeIn 0.3s ease-out;
+  box-sizing: border-box;
+}
+
+.login-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.login-info-message {
+  background: rgba(14, 165, 233, 0.1);
+  color: #bae6fd;
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
+.flex-error {
+  align-items: flex-start;
+}
+
+.err-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  color: #ef4444;
+  margin-top: 2px;
+}
+
+.succ-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  color: #10b981;
+  margin-top: 2px;
+}
+
+.flex-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #d1fae5;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+/* OTP Specifics */
+.otp-inputs-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.otp-inputs-wrapper input {
+  width: 48px;
+  height: 52px;
+  padding: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.otp-inputs-wrapper input:focus {
+  border-color: #8b5cf6;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+.masked-id {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.resend-container {
+  margin: 1.25rem 0 0.5rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #a78bfa;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.resend-btn:hover {
+  color: #c084fc;
+}
+
+.resend-timer {
+  color: #64748b;
+}
+
+.resend-timer strong {
+  color: #94a3b8;
+}
+
+/* Alternate Auth Options */
+.divider-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+.divider-or::before,
+.divider-or::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.divider-or:not(:empty)::before {
+  margin-right: .75em;
+}
+
+.divider-or:not(:empty)::after {
+  margin-left: .75em;
+}
+
+.btn-secondary-outline {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.btn-secondary-outline:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+  color: #f8fafc;
+}
+
+/* Card Footer Links */
+.card-footer {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+}
+
+.back-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #f8fafc;
+}
+
+.back-link svg {
+  transition: transform 0.2s;
+}
+
+.back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Success Card States */
+.success-card {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.success-card:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.1);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.alert-message {
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 0.85rem;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+.success-alert {
+  background: rgba(16, 185, 129, 0.1);
+  color: #a7f3d0;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.btn-primary-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-primary-link:hover {
+  background: #059669;
+}
+
+/* Response/Screen Adaptations */
+@media (max-width: 480px) {
+  .admin-login-page {
+    padding: 1rem;
+    min-height: 100vh;
+  }
+  
+  .admin-login-card {
+    padding: 2.25rem 1.5rem;
+    border-radius: 16px;
+    border: none;
+  }
+  
+  .otp-inputs-wrapper input {
+    width: 40px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+}

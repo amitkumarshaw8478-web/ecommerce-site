@@ -1,0 +1,49 @@
+/* Admin User Info Security Styles */
+.admin-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-user {
+  font-weight: 600;
+  color: #2c3e50;
+  display: block;
+}
+
+.admin-email {
+  font-size: 0.85rem;
+  color: #666;
+  display: block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* Security Features */
+.security-banner {
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 10px 15px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  color: #155724;
+  font-size: 0.9rem;
+}
+
+.login-info-message {
+  background: #d1ecf1;
+  border-left: 4px solid #17a2b8;
+  padding: 10px 15px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  color: #0c5460;
+  font-size: 0.9rem;
+}
+
+.security-note {
+  font-size: 0.85rem;
+  color: #28a745;
+  margin: 0.5rem 0;
+}
