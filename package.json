@@ -1,0 +1,8 @@
+{
+  "name": "ecommerce-site-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd ecommerce-frontend && npm install && npm run build && cd .. && mkdir -p build && cp -r ecommerce-frontend/build/* build/"
+  }
+}
