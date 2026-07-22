@@ -117,12 +117,12 @@
   position: relative;
   border-radius: 12px;
   background: #f8fafc;
-  padding: 40px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
-  max-height: 480px;
+  min-height: 300px;
+  max-height: 350px;
   overflow: hidden;
 }
 
@@ -157,8 +157,8 @@
 }
 
 .thumbnail-card {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   border: 2px solid #e2e8f0;
   border-radius: 10px;
   padding: 6px;
@@ -207,7 +207,7 @@
 }
 
 .product-details-title {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 12px;
@@ -263,7 +263,7 @@
 }
 
 .detail-price-current {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #1e293b;
   background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
@@ -321,7 +321,8 @@
 /* Purchase Controls */
 .purchase-controls-row {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -329,10 +330,12 @@
 .quantity-incrementer-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 12px;
   padding: 4px;
+  margin-right: 0 !important;
 }
 
 .qty-label-prefix {
@@ -345,8 +348,8 @@
 .qty-adjust-btn {
   background: transparent;
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -388,6 +391,7 @@
   align-items: center;
   justify-content: center;
   height: 48px;
+  margin-top: 8px;
 }
 
 .btn-purchase-add-cart:hover {
@@ -416,6 +420,8 @@
   height: 48px;
   flex-grow: 1;
   cursor: pointer;
+  margin-top: 8px;
+  width: 100%;
 }
 
 .btn-purchase-buy-now:hover {
@@ -431,7 +437,7 @@
   background: #ffffff;
   border: 1px solid #cbd5e1;
   color: #64748b;
-  width: 48px;
+  width: 100%;
   height: 48px;
   border-radius: 12px;
   display: flex;
@@ -439,6 +445,8 @@
   justify-content: center;
   transition: all 0.2s ease;
   font-size: 1.2rem;
+  margin-top: 8px;
+  margin-left: 0 !important;
 }
 
 .btn-purchase-wishlist:hover {
@@ -496,6 +504,7 @@
   padding: 12px 6px;
   position: relative;
   transition: all 0.2s ease;
+  min-height: 44px;
 }
 
 .tab-nav-item-btn:hover {
@@ -661,48 +670,48 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .product-details-title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
   
   .main-image-viewport {
-    min-height: 300px;
-    max-height: 350px;
-    padding: 20px;
+    min-height: 400px;
+    max-height: 480px;
+    padding: 40px;
   }
   
   .thumbnail-card {
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
   }
   
   .detail-price-current {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .purchase-controls-row {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
   }
 
   .quantity-incrementer-wrapper {
-    justify-content: space-between;
-    margin-right: 0 !important;
+    justify-content: flex-start;
+    margin-right: inherit !important;
   }
 
   .btn-purchase-add-cart {
-    margin-top: 8px;
+    margin-top: 0;
   }
 
   .btn-purchase-buy-now {
-    margin-top: 8px;
-    width: 100%;
+    margin-top: 0;
+    width: auto;
   }
 
   .btn-purchase-wishlist {
-    margin-left: 0 !important;
-    margin-top: 8px;
-    width: 100%;
+    margin-top: 0;
+    width: 48px;
+    margin-left: inherit !important;
   }
 }

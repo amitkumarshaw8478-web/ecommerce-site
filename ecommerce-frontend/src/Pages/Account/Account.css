@@ -36,16 +36,19 @@
 
 .account-content {
   display: flex;
+  flex-direction: column;
   gap: 30px;
 }
 
 .account-sidebar {
-  flex: 0 0 250px;
+  flex: none;
 }
 
 .account-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow-x: auto;
+  padding-bottom: 10px;
   gap: 10px;
 }
 
@@ -60,6 +63,9 @@
   cursor: pointer;
   transition: all 0.3s;
   text-align: left;
+  min-height: 44px;
+  white-space: nowrap;
+  min-width: 120px;
 }
 
 .nav-item:hover {
@@ -230,7 +236,7 @@
 
 .wishlist-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -296,7 +302,10 @@
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   transition: all 0.3s;
 }
 
@@ -320,27 +329,27 @@
   color: white;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .account-content {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .account-sidebar {
-    flex: none;
+    flex: 0 0 250px;
   }
 
   .account-nav {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 10px;
+    flex-direction: column;
+    overflow-x: visible;
+    padding-bottom: 0;
   }
 
   .nav-item {
-    white-space: nowrap;
-    min-width: 120px;
+    white-space: normal;
+    min-width: auto;
   }
 
   .wishlist-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }

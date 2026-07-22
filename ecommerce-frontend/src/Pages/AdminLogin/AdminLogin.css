@@ -24,10 +24,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 70px); /* Adjust to standard navbar height */
+  min-height: 100vh;
   background: radial-gradient(circle at 10% 20%, rgb(18, 16, 33) 0%, rgb(9, 7, 18) 90%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  padding: 2.5rem 1.5rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -36,12 +36,12 @@
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  border: none;
+  border-radius: 16px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 440px;
-  padding: 3rem 2.5rem;
+  padding: 2.25rem 1.5rem;
   animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition: border-color 0.4s, box-shadow 0.4s;
   box-sizing: border-box;
@@ -145,10 +145,11 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   color: #f8fafc;
-  font-size: 0.95rem;
+  font-size: 16px;
   font-family: inherit;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
+  min-height: 44px;
 }
 
 .admin-login-card input::placeholder {
@@ -389,17 +390,18 @@
 }
 
 .otp-inputs-wrapper input {
-  width: 48px;
-  height: 52px;
+  width: 40px;
+  height: 44px;
   padding: 0;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   transition: all 0.25s ease;
+  min-height: 44px;
 }
 
 .otp-inputs-wrapper input:focus {
@@ -568,22 +570,22 @@
   background: #059669;
 }
 
-/* Response/Screen Adaptations */
-@media (max-width: 480px) {
+/* Response/Screen Adaptations (mobile first) */
+@media (min-width: 481px) {
   .admin-login-page {
-    padding: 1rem;
-    min-height: 100vh;
+    padding: 2.5rem 1.5rem;
+    min-height: calc(100vh - 70px);
   }
   
   .admin-login-card {
-    padding: 2.25rem 1.5rem;
-    border-radius: 16px;
-    border: none;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
   
   .otp-inputs-wrapper input {
-    width: 40px;
-    height: 44px;
-    font-size: 1.25rem;
+    width: 48px;
+    height: 52px;
+    font-size: 1.4rem;
   }
 }

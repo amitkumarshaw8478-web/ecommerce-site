@@ -11,7 +11,7 @@
 }
 
 .category-title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   margin: 0;
 }
@@ -27,6 +27,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
+  display: none;
 }
 
 .filter-group {
@@ -62,8 +63,8 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -137,6 +138,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  min-height: 44px;
 }
 
 .add-to-cart-btn {
@@ -165,17 +167,17 @@
   font-size: 1.1rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .category-title {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
   }
 
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
 
   .category-filters {
-    display: none;
+    display: block;
   }
 }
